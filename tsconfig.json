@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "jsx": "react",
+        "moduleResolution": "node",
+        "target": "es2017",
+        "lib": ["DOM", "ES2019", "ScriptHost"],
+        "experimentalDecorators": true,
+        "outDir": "dist",
+        "baseUrl": "./",
+        "sourceMap": false,
+        "incremental": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "allowJs": true,
+        "module": "commonjs"
+    },
+    "compileOnSave": false,
+    "buildOnSave": false,
+    "include": ["./src/**/*"]
+}
