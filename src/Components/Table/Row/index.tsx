@@ -6,6 +6,8 @@ import {FilterStatus} from '../../../constants';
 import {useAppSelector, useAppDispatch} from '../../../store/hooks';
 import {toggleIsOpen} from '../../../store/reducers/modal';
 import {formatBalance} from '../../../helpers/formatBalance';
+import {Status} from '../../Status';
+import {Button} from '../../Button';
 
 type Props = {
     account: AccountData;
@@ -29,13 +31,11 @@ export const Row = ({account}: Props) => {
             <td>{id}</td>
             <td>
                 <div className="table-status-block">
-                    <div className={`table-status-container table-status-container-${status}`}>
-                        {status}
-                    </div>
+                    <Status status={status} />
                     {allowedStatuses?.length > 0 && (
-                        <button type="button" className="change-button" onClick={onClick}>
+                        <Button className="change-button" onClick={onClick}>
                             Change
-                        </button>
+                        </Button>
                     )}
                 </div>
             </td>

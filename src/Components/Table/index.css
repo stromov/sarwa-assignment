@@ -1,37 +1,42 @@
+@import "../colors.css";
+@import "../fonts.css";
+
 table {
     border-collapse: collapse;
     border-spacing: 10px;
 }
 
-th {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+th,
+td {
+    font: $regular;
+}
 
+tr {
+    height: 100px;
+}
+
+th {
     text-align: left;
     padding: 16px 12px;
 
-    background: #ffffff;
-    color: #878787;
-    border-bottom: 1px solid #f5f5f5;
+    background: $white;
+    color: $darkGray;
+    border-bottom: 1px solid $gray;
 }
 
 td {
     max-width: 100%;
-    min-width: 100px;
+    min-width: 280px;
     padding: 24px 10px;
-    border-bottom: 1px solid #f5f5f5;
+    border-bottom: 1px solid $gray;
 
     vertical-align: middle;
-    color: #333333;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+    color: $black;
 }
 
 th select {
     border: 0;
-    color: #878787;
+    color: $darkGray;
 }
 
 .balance-cell,
@@ -39,19 +44,38 @@ th select {
     text-align: right;
 }
 
+.balance-heading-container {
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+
 .table-status-block {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
+    width: 280px;
     gap: 28px;
 }
 
-.table-status-block > button {
-    visibility: hidden;
+.change-button {
+    /* visibility: hidden; */
+    color: $white;
 }
 
-.table-status-block:hover > button {
-    visibility: visible;
+.change-button:hover {
+    opacity: 0.8;
 }
+
+/* .table-status-block > .change-button {
+    visibility: hidden;
+} */
+
+/* tr:hover .change-button {
+    visibility: visible;
+} */
 
 .table-status-container {
     height: 40px;
@@ -61,28 +85,17 @@ th select {
 }
 
 .table-status-container-Pending {
-    background: #faf2d4;
+    background: $yellow;
 }
 
 .table-status-container-Approved {
-    background: #e4f1f6;
+    background: $blue;
 }
 
 .table-status-container-Funded {
-    background: #dcf1e5;
+    background: $green;
 }
 
 .table-status-container-Closed {
-    background: #f5f5f5;
-}
-
-.change-button {
-    padding: 12px 16px;
-    gap: 8px;
-    width: 100px;
-    height: 48px;
-    background: #212121;
-    color: #ffffff;
-    border-radius: 8px;
-    border: 0;
+    background: $lightGray;
 }

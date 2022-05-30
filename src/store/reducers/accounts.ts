@@ -5,6 +5,8 @@ import type {Status, InitialAccountData} from '../../types';
 import accountsMock from '../../../mocks/accounts.json';
 import {processInitialData} from '../../helpers/processInitialData';
 
+import {getAllowedStatuses} from '../../helpers/getAllowedStatuses';
+
 const initialState = processInitialData(accountsMock as InitialAccountData[]);
 
 export const accounts = createSlice({
@@ -17,6 +19,7 @@ export const accounts = createSlice({
 
             if (item) {
                 item.status = status;
+                item.allowedStatuses = getAllowedStatuses(item);
             }
 
             return state;

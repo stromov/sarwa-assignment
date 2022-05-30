@@ -1,4 +1,8 @@
-import {Status as StatusConst, FilterStatus as FilterStatusConst} from './constants';
+import {
+    Status as StatusConst,
+    FilterStatus as FilterStatusConst,
+    SortType as SortTypeConst,
+} from './constants';
 
 export type StatusKeys = keyof typeof StatusConst;
 
@@ -22,3 +26,7 @@ export type State = {
     };
     filter?: FilterStatus;
 };
+
+type SortTypeKeys = keyof typeof SortTypeConst;
+
+export type SortTypeType = typeof SortTypeConst[SortTypeKeys];

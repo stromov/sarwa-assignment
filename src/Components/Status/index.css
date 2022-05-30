@@ -1,0 +1,28 @@
+@import "../colors.css";
+@import "../fonts.css";
+
+.status-container {
+    height: 40px;
+    padding: 8px 16px;
+
+    border-radius: 20px;
+
+    font: $regular;
+    text-align: center;
+}
+
+.status-container-Pending {
+    background: $yellow;
+}
+
+.status-container-Approved {
+    background: $blue;
+}
+
+.status-container-Funded {
+    background: $green;
+}
+
+.status-container-Closed {
+    background: $lightGray;
+}

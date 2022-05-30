@@ -7,6 +7,7 @@ type ModalState = {
     isOpen: boolean;
     accountId?: string;
     selectedStatus?: Status;
+    isPending?: boolean;
 };
 
 const initialState: ModalState = {isOpen: false};
@@ -26,6 +27,12 @@ export const modal = createSlice({
 
             state.isOpen = !state.isOpen;
 
+            if (!state.isOpen) {
+                state.selectedStatus = undefined;
+            } else {
+                state.isPending = false;
+            }
+
             return state;
         },
         setSelectedStatus: (state, action: PayloadAction<{status: Status}>) => {
@@ -37,9 +44,12 @@ export const modal = createSlice({
 
             return state;
         },
+        setIsPending: state => {
+            state.isPending = true;
+        },
     },
 });
 
-export const {toggleIsOpen, setSelectedStatus} = modal.actions;
+export const {toggleIsOpen, setSelectedStatus, setIsPending} = modal.actions;
 
 export const {reducer} = modal;

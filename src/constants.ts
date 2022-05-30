@@ -9,3 +9,8 @@ export const FilterStatus = {
     ...Status,
     all: 'All statuses',
 } as const;
+
+export const SortType = {
+    desc: 'desc',
+    asc: 'asc',
+} as const;

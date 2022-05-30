@@ -1,8 +1,8 @@
-@import url(https://d3papo0e39ftpk.cloudfront.net/fonts/Soleil-Regular.woff2);
+@import "../fonts.css";
 
 * {
-    font-family: 'Soleil', 'Helvetica', 'Arial', sans-serif;
     box-sizing: border-box;
+    outline: none;
 }
 
 .app {
@@ -15,7 +15,5 @@
 .title {
     margin-bottom: 42px;
 
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 36px;
+    font: $heading;
 }

@@ -1,0 +1,90 @@
+@import "../colors.css";
+@import "../fonts.css";
+
+.modal-content-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    font: $regularBold;
+    color: $black;
+}
+
+.modal-close-icon {
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    padding: 4px 0 0;
+    border: 0;
+    border-radius: 32px;
+    background: $lightGray;
+}
+
+.modal-close-icon:hover {
+    background: $gray;
+}
+
+.modal-account-subtitle,
+.modal-select-label {
+    font: $small;
+    margin-bottom: 4px;
+}
+
+.modal-account-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 20px;
+
+    font: $regular;
+}
+
+.modal-select {
+    height: 40px;
+    border: 1px solid $lightGray;
+    border-radius: 8px;
+    margin-bottom: 44px;
+
+    font: $regular;
+    color: $darkGray;
+}
+
+.modal-buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.modal-change-button {
+    color: $white;
+}
+
+.modal-change-button:hover {
+    opacity: 0.8;
+}
+
+.modal-change-button-disabled,
+.modal-change-button-disabled:hover {
+    opacity: 0.5;
+}
+
+.modal-cancel-button {
+    background: $gray;
+}
+
+.modal-cancel-button:hover {
+    background: $darkGray;
+    color: $black;
+}

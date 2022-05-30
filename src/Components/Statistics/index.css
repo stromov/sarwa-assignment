@@ -1,3 +1,6 @@
+@import "../colors.css";
+@import "../fonts.css";
+
 .cards-container {
     display: flex;
     flex-direction: row;
@@ -19,31 +22,29 @@
 }
 
 .card-type-Total {
-    background: #ffffff;
-    border: 1px solid #e5e5e5;
+    background: $white;
+    border: 1px solid $gray;
 }
 
 .card-type-Pending {
-    background: #faf2d4;
+    background: $yellow;
 }
 
 .card-type-Approved {
-    background: #e4f1f6;
+    background: $blue;
 }
 
 .card-type-Funded {
-    background: #dcf1e5;
+    background: $green;
 }
 
 .card-type-Closed {
-    background: #f5f5f5;
+    background: $lightGray;
 }
 
 .card-type,
 .card-balance-count {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 20px;
+    font: $regularBold;
 }
 
 .card-balance-count {
@@ -51,9 +52,7 @@
 }
 
 .card-balance-title {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 18px;
+    font: $small;
 }
 
 .card-balance-container {
@@ -62,3 +61,4 @@
     align-self: flex-end;
     gap: 8px;
 }
+
