@@ -1,7 +1,7 @@
-import {AccountData} from '../types';
+import {InitialAccountData} from '../types';
 import {Status} from '../constants';
 
-export const getAllowedStatuses = (account: AccountData) => {
+export const getAllowedStatuses = (account: InitialAccountData) => {
     const {status, balance} = account;
 
     if (status === Status.pending) {
@@ -12,7 +12,7 @@ export const getAllowedStatuses = (account: AccountData) => {
         return [Status.funded, Status.closed];
     }
 
-    if (status === 'funded' && balance === 0) {
+    if (status === Status.funded && balance === 0) {
         return [Status.closed];
     }
 

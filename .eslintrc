@@ -17,6 +17,11 @@
         "implicit-arrow-linebreak": "off",
         "jsx-a11y/label-has-associated-control": "off",
         "function-paren-newline": "off",
-        "no-plusplus": "off"
+        "no-plusplus": "off",
+        "no-param-reassign": "off",
+        "no-confusing-arrow": "off",
+        "object-curly-newline": "off",
+        "jsx-a11y/control-has-associated-label": "off",
+        "react/jsx-one-expression-per-line": "off"
     }
 }

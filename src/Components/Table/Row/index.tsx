@@ -1,42 +1,45 @@
 import * as React from 'react';
 
-import type {AccountData, Status} from '../../../types';
+import type {AccountData} from '../../../types';
 
-import {getAllowedStatuses} from '../../../helpers/getAllowedStatuses';
+import {FilterStatus} from '../../../constants';
+import {useAppSelector, useAppDispatch} from '../../../store/hooks';
+import {toggleIsOpen} from '../../../store/reducers/modal';
+import {formatBalance} from '../../../helpers/formatBalance';
 
 type Props = {
-    item: AccountData;
-    onAccountStatusChange: (id: string, status: Status) => void;
+    account: AccountData;
 };
 
-export const Row = ({item, onAccountStatusChange}: Props) => {
-    const {status, id, balance} = item;
-    const allowedStatuses = getAllowedStatuses(item);
-    const Options = [
-        <option key={status} value={status}>
-            {status}
-        </option>,
-        allowedStatuses.map(allowedStatus => (
-            <option key={allowedStatus} value={allowedStatus}>
-                {allowedStatus}
-            </option>
-        )),
-    ];
+export const Row = ({account}: Props) => {
+    const {status, id, balance, allowedStatuses} = account;
+    const filter = useAppSelector(state => state.filter.value);
+    const dispath = useAppDispatch();
 
-    const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const {value} = event.target;
-        onAccountStatusChange(id, value as Status);
+    if (filter !== FilterStatus.all && filter !== status) {
+        return null;
+    }
+
+    const onClick = () => {
+        dispath(toggleIsOpen({accountId: id}));
     };
 
     return (
         <tr>
             <td>{id}</td>
-            <td>{balance}</td>
             <td>
-                <select id="allowedStatus" name="allowedStatus" disabled={!allowedStatuses.length} onChange={onChange}>
-                    {Options}
-                </select>
+                <div className="table-status-block">
+                    <div className={`table-status-container table-status-container-${status}`}>
+                        {status}
+                    </div>
+                    {allowedStatuses?.length > 0 && (
+                        <button type="button" className="change-button" onClick={onClick}>
+                            Change
+                        </button>
+                    )}
+                </div>
             </td>
+            <td className="balance-cell">{formatBalance(balance)}</td>
         </tr>
     );
 };

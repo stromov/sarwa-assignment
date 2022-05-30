@@ -1,18 +1,21 @@
 import {nanoid} from 'nanoid';
 
-import type {InitialAccountData, State} from '../types';
+import type {InitialAccountData, AccountData, StatusKeys} from '../types';
+import {Status} from '../constants';
+import {getAllowedStatuses} from './getAllowedStatuses';
 
-export const processInitialData = (initialData: InitialAccountData[]): State =>
-    initialData.reduce(
-        (acc, item) => {
-            const id = nanoid(6);
-            acc.collections.accounts[id] = {
+export const processInitialData = (initialData: InitialAccountData[]) =>
+    initialData.reduce((acc: Record<string, AccountData>, item) => {
+        const id = nanoid(12);
+        const status = Status[item.status as StatusKeys];
+        acc[id] = {
+            ...item,
+            allowedStatuses: getAllowedStatuses({
                 ...item,
-                id,
-                isVisible: true,
-            };
-
-            return acc;
-        },
-        {collections: {accounts: {}}, filter: 'all'} as State,
-    );
+                status,
+            }),
+            status,
+            id,
+        };
+        return acc;
+    }, {});

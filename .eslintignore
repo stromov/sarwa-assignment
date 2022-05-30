@@ -1,2 +1,4 @@
 postcss.config.js
 prettier.config.js
+webpack.config.js
+stylelint.config.js

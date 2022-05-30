@@ -1,6 +1,11 @@
 export const Status = {
-    pending: 'pending',
-    approved: 'approved',
-    funded: 'funded',
-    closed: 'closed',
+    pending: 'Pending',
+    approved: 'Approved',
+    funded: 'Funded',
+    closed: 'Closed',
+} as const;
+
+export const FilterStatus = {
+    ...Status,
+    all: 'All statuses',
 } as const;

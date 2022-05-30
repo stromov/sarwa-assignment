@@ -1,29 +1,22 @@
 import * as React from 'react';
 
-import type {AccountData, Status} from '../../types';
-
 import {Heading} from './Heading';
 import {Row} from './Row';
+import {useAppSelector} from '../../store/hooks';
 
-type Props = {
-    accounts: AccountData[];
-    onAccountStatusChange: (id: string, status: Status) => void;
-};
+import './index.css';
 
-export function Table({accounts, onAccountStatusChange}: Props) {
+export function Table() {
+    const accountsData = useAppSelector(state => state.accounts);
+    const accounts = Object.values(accountsData);
+
     return (
         <table>
             <Heading />
             <tbody>
-                {accounts.map(item =>
-                    (item.isVisible ? (
-                        <Row
-                            key={item.id}
-                            item={item}
-                            onAccountStatusChange={onAccountStatusChange}
-                        />
-                    ) : null),
-                )}
+                {accounts.map(item => (
+                    <Row key={item.id} account={item} />
+                ))}
             </tbody>
         </table>
     );
