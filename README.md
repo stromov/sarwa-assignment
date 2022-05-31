@@ -30,7 +30,10 @@ This assignment is about creating a simple dashboard that staff can use to manag
 
 ```bash
     git clone git@github.com:stromov/sarwa-assignment.git
+
     cd sarwa-assignment
+
     npm install
+
     npm run start
 ```
