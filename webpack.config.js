@@ -43,6 +43,9 @@ module.exports = (_, argv) => ({
     devServer: {
         port: 3000,
     },
+    performance: {
+        hints: false,
+    },
     plugins: [
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({

@@ -5,9 +5,9 @@
     "main": "index.js",
     "scripts": {
         "dev": "webpack-dev-server --open --mode development --hot",
+        "start": "webpack-dev-server --open --mode production",
         "build": "webpack --mode production",
-        "tsc": "tsc",
-        "lint": "tsc --noEmit -p ./tsconfig.json"
+        "tsc": "tsc"
     },
     "author": "Yury Stromov",
     "license": "ISC",
