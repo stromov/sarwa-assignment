@@ -14,11 +14,14 @@ export const Heading = () => {
     return (
         <thead>
             <tr>
-                <th>Account</th>
-                <th>
+                <th className="account-table-heading">Account</th>
+                <th className="account-table-heading">
                     <Filter />
                 </th>
-                <th className="balance-heading" onClick={onBalanceHeadingClick}>
+                <th
+                    className="account-table-heading balance-heading"
+                    onClick={onBalanceHeadingClick}
+                >
                     <div className="balance-heading-container">
                         <span>Balance</span>
                         <BalanceIcon />

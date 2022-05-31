@@ -1,21 +1,21 @@
 @import "../colors.css";
 @import "../fonts.css";
 
-table {
+.account-table {
     border-collapse: collapse;
     border-spacing: 10px;
 }
 
-th,
-td {
+.account-table-heading,
+.account-table-cell {
     font: $regular;
 }
 
-tr {
+.account-table-row {
     height: 100px;
 }
 
-th {
+.account-table-heading {
     text-align: left;
     padding: 16px 12px;
 
@@ -24,7 +24,7 @@ th {
     border-bottom: 1px solid $gray;
 }
 
-td {
+.account-table-cell {
     max-width: 100%;
     min-width: 280px;
     padding: 24px 10px;
@@ -34,7 +34,8 @@ td {
     color: $black;
 }
 
-th select {
+.account-table-heading .account-table-filter {
+    cursor: pointer;
     border: 0;
     color: $darkGray;
 }
@@ -61,21 +62,12 @@ th select {
 }
 
 .change-button {
-    /* visibility: hidden; */
     color: $white;
 }
 
 .change-button:hover {
     opacity: 0.8;
 }
-
-/* .table-status-block > .change-button {
-    visibility: hidden;
-} */
-
-/* tr:hover .change-button {
-    visibility: visible;
-} */
 
 .table-status-container {
     height: 40px;
@@ -98,4 +90,14 @@ th select {
 
 .table-status-container-Closed {
     background: $lightGray;
+}
+
+.sort-icon-desc {
+    transform: rotateX(180deg);
+}
+
+.funded-account-tip {
+    font: $small;
+    color: $darkGray;
+    text-align: end;
 }

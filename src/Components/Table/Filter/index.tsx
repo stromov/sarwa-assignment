@@ -24,7 +24,12 @@ export const Filter = () => {
     };
 
     return (
-        <select id="status" name="status" onChange={onFilterChange}>
+        <select
+            id="status"
+            name="status"
+            className="account-table-filter"
+            onChange={onFilterChange}
+        >
             {Options}
         </select>
     );

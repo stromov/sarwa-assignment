@@ -2,12 +2,12 @@ import * as React from 'react';
 
 import type {AccountData} from '../../../types';
 
-import {FilterStatus} from '../../../constants';
+import {FilterStatus, Status as StatusConst} from '../../../constants';
 import {useAppSelector, useAppDispatch} from '../../../store/hooks';
 import {toggleIsOpen} from '../../../store/reducers/modal';
 import {formatBalance} from '../../../helpers/formatBalance';
-import {Status} from '../../Status';
-import {Button} from '../../Button';
+import {Status} from '../../shared/Status';
+import {Button} from '../../shared/Button';
 
 type Props = {
     account: AccountData;
@@ -27,9 +27,9 @@ export const Row = ({account}: Props) => {
     };
 
     return (
-        <tr>
-            <td>{id}</td>
-            <td>
+        <tr className="account-table-row">
+            <td className="account-table-cell">{id}</td>
+            <td className="account-table-cell">
                 <div className="table-status-block">
                     <Status status={status} />
                     {allowedStatuses?.length > 0 && (
@@ -37,9 +37,14 @@ export const Row = ({account}: Props) => {
                             Change
                         </Button>
                     )}
+                    {status === StatusConst.funded && balance > 0 && (
+                        <span className="funded-account-tip">
+                            Funded account with balance can&apos;t be closed
+                        </span>
+                    )}
                 </div>
             </td>
-            <td className="balance-cell">{formatBalance(balance)}</td>
+            <td className="account-table-cell balance-cell">{formatBalance(balance)}</td>
         </tr>
     );
 };

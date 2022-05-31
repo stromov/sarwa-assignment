@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import type {Status as StatusType} from '../../types';
+import type {Status as StatusType} from '../../../types';
 
 import './index.css';
 

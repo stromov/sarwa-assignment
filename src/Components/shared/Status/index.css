@@ -1,5 +1,5 @@
-@import "../colors.css";
-@import "../fonts.css";
+@import "../../colors.css";
+@import "../../fonts.css";
 
 .status-container {
     height: 40px;

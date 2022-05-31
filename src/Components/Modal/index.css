@@ -51,6 +51,7 @@
 }
 
 .modal-select {
+    cursor: pointer;
     height: 40px;
     border: 1px solid $lightGray;
     border-radius: 8px;

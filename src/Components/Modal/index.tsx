@@ -6,8 +6,8 @@ import {useAppSelector, useAppDispatch} from '../../store/hooks';
 import {toggleIsOpen, setSelectedStatus, setIsPending} from '../../store/reducers/modal';
 import {setStatus} from '../../store/reducers/accounts';
 import {fakePutResolver} from '../../fakePutResolver';
-import {Status} from '../Status';
-import {Button} from '../Button';
+import {Status} from '../shared/Status';
+import {Button} from '../shared/Button';
 import {CloseIcon} from './CloseIcon';
 
 import './index.css';
@@ -64,12 +64,13 @@ export const Modal = () => {
             </option>
         )),
     ];
-    console.log(isPending);
+
     return (
         <ReactModal
             isOpen={isOpen}
             onRequestClose={onRequestClose}
             style={customStyles}
+            shouldCloseOnEsc={!isPending}
             contentLabel="Account status"
         >
             <div className="modal-content-container">

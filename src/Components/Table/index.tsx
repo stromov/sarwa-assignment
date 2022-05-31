@@ -19,7 +19,7 @@ export function Table() {
     const accounts = Object.values(accountsData).sort(sortFuncs[sortType]);
 
     return (
-        <table>
+        <table className="account-table">
             <Heading />
             <tbody>
                 {accounts.map(item => (
